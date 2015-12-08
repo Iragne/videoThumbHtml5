@@ -58,7 +58,13 @@ class ThumbVideo {
 		if (this.video === undefined){
 			var e = document.createElement("div");
 			e.id = "divThumbVideoPlaceHoler";
-			e.style = "width: 10px; height: 10px; overflow: hidden; display: block; position: absolute; top: 0px; left: -500px;"
+			e.style.width = "10px";
+			e.style.height= "10px";
+			e.style.overflow= "hidden";
+			e.style.display= "block";
+			e.style.position= "absolute";
+			e.style.top= "0px";
+			e.style.left= "-500px";
 			e.innerHTML = '<video  data-setup="{}"  style="" id="ThumbVideoPlaceHoler"  crossOrigin="anonymous" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" ></video>';
 			window.document.body.appendChild(e);
 			this.video = document.getElementById("ThumbVideoPlaceHoler");
