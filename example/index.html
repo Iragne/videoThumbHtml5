@@ -1,0 +1,53 @@
+<head>
+  
+<link href="../node_modules/videojs/dist/video-js/video-js.min.css" rel="stylesheet">
+<script src="../node_modules/videojs/dist/video-js/video.js"></script>
+
+
+
+<script src="./dash.all.js"></script>
+<script src="../node_modules/videojs-contrib-dash/dist/videojs-dash.js"></script>
+
+
+</head>
+
+<body>
+
+
+    <img id="canvasImg1" alt="Thumb here" width="160" height="90">
+    <img id="canvasImg2" alt="Thumb here" width="160" height="90">
+    <img id="canvasImg3" alt="Thumb here" width="160" height="90">
+    <img id="canvasImg4" alt="Thumb here" width="160" height="90">
+    <img id="canvasImg5" alt="Thumb here" width="160" height="90">
+    <img id="canvasImg6" alt="Thumb here" width="160" height="90">
+
+
+  <script src="../dist/index.js"></script>
+<script>
+var time = 15*60;
+setTimeout(function (){
+  
+  
+  thumbVideoFactory.getThumb("http://luke.netdevices.fr/MHSC_vs_ASSE.mp4",time + 3*5*60, function (imgData) {
+    document.getElementById('canvasImg4').src = imgData;
+  });
+  thumbVideoFactory.getThumb("http://luke.netdevices.fr/MHSC_vs_ASSE.mp4", time + 4*5*60, function (imgData) {
+    document.getElementById('canvasImg5').src = imgData;
+  });
+  thumbVideoFactory.getThumb("http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd",4*60, function (imgData) {
+    document.getElementById('canvasImg6').src = imgData;
+  });
+  thumbVideoFactory.getThumb("http://luke.netdevices.fr/MHSC_vs_ASSE.mp4",time + 2*5*60, function (imgData) {
+    document.getElementById('canvasImg3').src = imgData;
+  });
+  thumbVideoFactory.getThumb("http://luke.netdevices.fr/MHSC_vs_ASSE.mp4",time, function (imgData) {
+    document.getElementById('canvasImg1').src = imgData;
+  });
+  thumbVideoFactory.getThumb("http://luke.netdevices.fr/MHSC_vs_ASSE.mp4",time + 5*5*60, function (imgData) {
+    document.getElementById('canvasImg2').src = imgData;
+  });
+
+}, 2000);
+</script>
+  
+</body>
