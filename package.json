@@ -1,15 +1,34 @@
 {
-  "name": "thumb",
+  "name": "videothumbhtml5",
   "version": "1.0.0",
-  "description": "",
+  "description": "This npm create a thumb client side from a video (mp4/wbm/DASH) all in html5",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies":{
-  	"videojs-contrib-dash":"1.1.1",
-  	"videojs":"4.12.15"
-  }
+  "author": "Iragne",
+  "license": "MIT",
+  "dependencies": {
+    "videojs-contrib-dash": "1.1.1",
+    "videojs": "4.12.15"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iragne/videoThumbHtml5.git"
+  },
+  "keywords": [
+    "video",
+    "thumbnail",
+    "thumb",
+    "html",
+    "client"
+  ],
+  "bugs": {
+    "url": "https://github.com/Iragne/videoThumbHtml5/issues"
+  },
+  "homepage": "https://github.com/Iragne/videoThumbHtml5#readme"
 }
