@@ -17,15 +17,15 @@ var ThumbRequest = (function () {
 
 	_createClass(ThumbRequest, [{
 		key: 'extract',
-		value: function extract() {
+		value: function extract(divId) {
 			var back = document.createElement('canvas');
 			back.crossorigin = 'anonymous';
-			this.divId.crossorigin = 'anonymous';
+			divId.crossorigin = 'anonymous';
 			var backcontext = back.getContext('2d');
 			backcontext.crossorigin = '';
-			back.height = this.divId.clientHeight;
-			back.width = this.divId.clientWidth;
-			backcontext.drawImage(this.divId, 0, 0, this.divId.clientWidth, this.divId.clientHeight);
+			back.height = divId.clientHeight;
+			back.width = divId.clientWidth;
+			backcontext.drawImage(this.divId, 0, 0, divId.clientWidth, divId.clientHeight);
 			var data = back.toDataURL();
 			return data;
 		}
@@ -36,7 +36,7 @@ var ThumbRequest = (function () {
 			var fctSeek = (function () {
 				player.off("seeked", fctSeek);
 				player.pause();
-				var data = this.extract();
+				var data = this.extract(this.divId);
 				this.data = data;
 				callback(data);
 			}).bind(this);
@@ -104,6 +104,11 @@ var ThumbVideo = (function () {
 					this.process();
 				}
 			}).bind(this));
+		}
+	}, {
+		key: 'getThumbDiv',
+		value: function getThumbDiv(domElt) {
+			return new ThumbRequest("", 0, function () {}).extract(domElt);
 		}
 	}, {
 		key: 'process',
