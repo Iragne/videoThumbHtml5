@@ -25,7 +25,7 @@ var ThumbRequest = (function () {
 			backcontext.crossorigin = '';
 			back.height = divId.clientHeight;
 			back.width = divId.clientWidth;
-			backcontext.drawImage(this.divId, 0, 0, divId.clientWidth, divId.clientHeight);
+			backcontext.drawImage(divId, 0, 0, divId.clientWidth, divId.clientHeight);
 			var data = back.toDataURL();
 			return data;
 		}

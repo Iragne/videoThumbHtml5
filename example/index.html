@@ -22,6 +22,8 @@
     <img id="canvasImg6" alt="Thumb here" width="160" height="90">
 
 
+    <img id="canvasImg7" alt="Thumb Div here" width="160" height="90">
+
   <script src="../dist/index.js"></script>
 <script>
 var time = 15*60;
@@ -45,6 +47,8 @@ setTimeout(function (){
   });
   thumbVideoFactory.getThumb("http://luke.netdevices.fr/MHSC_vs_ASSE.mp4",time + 5*5*60, function (imgData) {
     document.getElementById('canvasImg2').src = imgData;
+
+    document.getElementById('canvasImg7').src = thumbVideoFactory.getThumbDiv(document.getElementById('canvasImg2'));
   });
 
 }, 2000);
