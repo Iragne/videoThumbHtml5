@@ -92,8 +92,11 @@ class ThumbVideo {
       return (new  ThumbRequest("", 0, function(){})).extract(domElt);
    }
    process(){
-      if (this.buffer.length === 0)
+      // if you want to recall your getThumb function after a complete processing, you have to reinitilize processCount.
+      if (this.buffer.length === 0){
+         this.processCount=0;
          return;
+      }
       var elt = this.buffer[0];
       elt.run(this.videojs, this.video, function () {
          this.processCount--;
