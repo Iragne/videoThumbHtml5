@@ -23,8 +23,9 @@ thumbVideoFactory.getThumb(videosURL, time in second, callback)
  1. Video url (mp4 or Dash)
  2. Time to get thumbnail in second
  3. Callback (imageData) 
+ 4. Options (videojs options) default {}
 
 
     thumbVideoFactory.getThumb("http://example.com/video.mp4",60, function (imgData) {
     	document.getElementById('canvasImg4').src = imgData;
-    });
+    },options);
